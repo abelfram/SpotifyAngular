@@ -4,7 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    //component:
+    loadChildren:() => import('./modules/home/home-routing.module').then(m => m.HomeRoutingModule)
+  },
+  {
+    path: 'history',
+    loadChildren:() => import('./modules/history/history-routing.module').then(m => m.HistoryRoutingModule)
+  },
+  {
+    path: 'tracks',
+    loadChildren:() => import('./modules/tracks/tracks-routing.module').then(m => m.TracksRoutingModule)
   }
 ];
 
